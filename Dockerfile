@@ -5,10 +5,10 @@ RUN apk-install \
         php-zlib \
         php-mysql \
         php-mysqli \
-        curl && \
-    curl http://codeception.com/codecept.phar -o /usr/local/bin/codecept.phar && \
-    chmod +x /usr/local/bin/codecept.phar && \
-    ln -s /usr/local/bin/codecept.phar /usr/local/bin/codecept && \
-    apk del curl
+        wget && \
+    wget --quiet http://codeception.com/codecept.phar && \
+    chmod +x codecept.phar && \
+    mv codecept.phar /usr/local/bin/codecept && \
+    apk del wget
 
 ENTRYPOINT ["codecept"]
