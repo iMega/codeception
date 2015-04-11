@@ -6,6 +6,7 @@ RUN apk-install \
         php-mysql \
         php-mysqli \
         php-json \
+        php-ctype \
         wget && \
     wget --quiet http://codeception.com/codecept.phar && \
     chmod +x codecept.phar && \
